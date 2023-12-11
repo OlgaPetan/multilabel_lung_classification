@@ -17,6 +17,7 @@ from azure.ai.ml.sweep import (
 from azure.ai.ml import automl
 import base64
 from io import BytesIO
+import os
 
 st.set_page_config(page_title = "Multilabel Lung Disease Classifier", page_icon = ":robot:") #renames the title of the page in the browser
 
@@ -26,9 +27,9 @@ try:
     ml_client = MLClient.from_config(credential)
 except Exception as ex:
     print(ex)
-    subscription_id = "95f0f8ca-f707-440a-a9a1-e107df0635dd"
-    resource_group = "master_thesis"
-    workspace = "master"
+    subscription_id = os.environ.get("SUBSCRIPTION_ID")
+    resource_group = os.environ.get("RESOURCE_GROUP")
+    workspace = os.environ.get("RESOURCE_GROUP")
     ml_client = MLClient(credential, subscription_id, resource_group, workspace)
 
 online_endpoint_name = "disease-classification"
