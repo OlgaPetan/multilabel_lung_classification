@@ -9,9 +9,9 @@ import ssl
 from azure.identity import ClientSecretCredential
 
 credential = ClientSecretCredential(
-    client_id=os.environ.get("CLIENT_ID"),
-    client_secret=os.environ.get("CLIENT_SECRET"),
-    tenant_id=os.environ.get("TENANT_ID"),  
+    client_id=os.environ.get("AZURE_CLIENT_ID"),
+    client_secret=os.environ.get("AZURE_CLIENT_SECRET"),
+    tenant_id=os.environ.get("AZURE_TENANT_ID"),  
 )
 from azure.ai.ml import MLClient
 from azure.ai.ml.automl import SearchSpace, ClassificationMultilabelPrimaryMetrics
