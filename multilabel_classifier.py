@@ -7,12 +7,6 @@ import json
 import os
 import ssl
 from azure.identity import ClientSecretCredential
-
-credential = ClientSecretCredential(
-    client_id=os.environ.get("AZURE_CLIENT_ID"),
-    client_secret=os.environ.get("AZURE_CLIENT_SECRET"),
-    tenant_id=os.environ.get("AZURE_TENANT_ID"),  
-)
 from azure.ai.ml import MLClient
 from azure.ai.ml.automl import SearchSpace, ClassificationMultilabelPrimaryMetrics
 from azure.ai.ml.sweep import (
@@ -27,7 +21,11 @@ import os
 
 st.set_page_config(page_title = "Multilabel Lung Disease Classifier", page_icon = ":robot:") #renames the title of the page in the browser
 
-credential = DefaultAzureCredential()
+credential = ClientSecretCredential(
+    client_id=os.environ.get("AZURE_CLIENT_ID"),
+    client_secret=os.environ.get("AZURE_CLIENT_SECRET"),
+    tenant_id=os.environ.get("AZURE_TENANT_ID"),  
+)
 ml_client = None
 try:
     ml_client = MLClient.from_config(credential)
