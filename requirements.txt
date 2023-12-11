@@ -1,5 +1,6 @@
 azure-storage-blob==12.19.0
 azureml==0.2.7
+azure-ai-ml==1.12.1
 azureml_automl_core==1.54.0
 azureml_automl_runtime==1.54.0
 azureml_core==1.54.0
