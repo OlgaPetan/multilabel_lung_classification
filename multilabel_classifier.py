@@ -32,8 +32,8 @@ except Exception as ex:
     workspace = os.environ.get("RESOURCE_GROUP")
     ml_client = MLClient(credential, subscription_id, resource_group, workspace)
 
-online_endpoint_name = "disease-classification"
-deployment_name = "disease-classification-1"
+online_endpoint_name = os.environ.get("ONLINE_ENDPOINT_NAME")
+deployment_name = os.environ.get("DEPLOYMENT_NAME")
 
 st.markdown('<h1 style="color:black;text-align: center;">Multilabel Lung Disease Classifier</h1>', unsafe_allow_html=True)
 st.markdown('<h2 style="color:gray;text-align: center;">Azure AutoML Deployed Model</h2>', unsafe_allow_html=True)
