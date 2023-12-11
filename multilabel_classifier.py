@@ -6,9 +6,13 @@ import urllib.request
 import json
 import os
 import ssl
-from azure.identity import DefaultAzureCredential
+from azure.identity import ClientSecretCredential
 
-credential = DefaultAzureCredential()
+credential = ClientSecretCredential(
+    client_id=os.environ.get("CLIENT_ID"),
+    client_secret=os.environ.get("CLIENT_SECRET"),
+    tenant_id=Nos.environ.get("TENANT_ID"),  
+)
 from azure.ai.ml import MLClient
 from azure.ai.ml.automl import SearchSpace, ClassificationMultilabelPrimaryMetrics
 from azure.ai.ml.sweep import (
