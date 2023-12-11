@@ -11,7 +11,7 @@ from azure.identity import ClientSecretCredential
 credential = ClientSecretCredential(
     client_id=os.environ.get("CLIENT_ID"),
     client_secret=os.environ.get("CLIENT_SECRET"),
-    tenant_id=Nos.environ.get("TENANT_ID"),  
+    tenant_id=os.environ.get("TENANT_ID"),  
 )
 from azure.ai.ml import MLClient
 from azure.ai.ml.automl import SearchSpace, ClassificationMultilabelPrimaryMetrics
