@@ -29,7 +29,7 @@ except Exception as ex:
     print(ex)
     subscription_id = os.environ.get("SUBSCRIPTION_ID")
     resource_group = os.environ.get("RESOURCE_GROUP")
-    workspace = os.environ.get("RESOURCE_GROUP")
+    workspace = os.environ.get("WORKSPACE")
     ml_client = MLClient(credential, subscription_id, resource_group, workspace)
 
 online_endpoint_name = os.environ.get("ONLINE_ENDPOINT_NAME")
