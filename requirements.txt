@@ -16,7 +16,6 @@ azureml_train_core==1.54.0
 azureml_train_restclients_hyperdrive==1.54.0
 azureml_training_tabular==1.54.0
 numpy==1.22.4
-Pillow==10.0.0
 Pillow==10.1.0
 Requests==2.31.0
 streamlit==1.12.0
