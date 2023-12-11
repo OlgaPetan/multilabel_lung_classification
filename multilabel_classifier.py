@@ -222,10 +222,34 @@ if uploaded_image is not None:
 
         # Print text based on button clicks
         if button_pressed[0]:
-            st.write(f"There are {number_predictions} diseases detected.")
+            st.markdown(
+            """
+            <style>
+                .answer_number {
+                    color: black;
+                    font-size: 24px; /* Font size */
+                    text-align: left;
+                }
+            </style>
+            """,
+            unsafe_allow_html=True
+            )
+            st.write(f"<div class='answer_number'>There are {number_predictions} diseases detected.</div>", unsafe_allow_html=True)
         elif button_pressed[1]:
             labels_str = ", ".join(labels)
-            st.write(f"The diseases detected are: {labels_str}")
+            st.markdown(
+            """
+            <style>
+                .answer_labels {
+                    color: black;
+                    font-size: 24px; /* Font size */
+                    text-align: center;
+                }
+            </style>
+            """,
+            unsafe_allow_html=True
+            )
+            st.write(f"<div class='answer_labels'>The diseases detected are: {labels_str}</div>", unsafe_allow_html=True)
         elif button_pressed[2]:
             visualizations = predictions[0]["visualizations"]
 
