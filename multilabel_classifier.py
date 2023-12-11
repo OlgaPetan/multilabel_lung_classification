@@ -22,7 +22,6 @@ import os
 st.set_page_config(page_title = "Multilabel Lung Disease Classifier", page_icon = ":robot:") #renames the title of the page in the browser
 
 credential = DefaultAzureCredential(
-    tenant_id=os.environ.get("AZURE_TENANT_ID"),
     client_id=os.environ.get("AZURE_CLIENT_ID"),
     client_secret=os.environ.get("AZURE_CLIENT_SECRET")
 )
