@@ -6,3 +6,5 @@ All images are taken from this repo: https://nihcc.app.box.com/v/ChestXray-NIHCC
 
 The model is trained on Azure using AutoML to do hyperparameter tuning and test different models and parameters in order to find the best model. The model is
 deployed in Azure as well.
+
+The app that hosts the model: https://multilabel-lung-classification-azure.streamlit.app/
