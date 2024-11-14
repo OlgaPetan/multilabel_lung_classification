@@ -27,12 +27,15 @@ credential = ClientSecretCredential(
     tenant_id=os.environ.get("AZURE_TENANT_ID"),  
 )
 
-ml_client = MLClient(
-    credential,
-    os.environ.get("SUBSCRIPTION_ID"),
-    os.environ.get("RESOURCE_GROUP"),
-    os.environ.get("WORKSPACE")
-)
+ml_client = None
+try:
+    ml_client = MLClient.from_config(credential)
+except Exception as ex:
+    print(ex)
+    subscription_id = os.environ.get("SUBSCRIPTION_ID")
+    resource_group = os.environ.get("RESOURCE_GROUP")
+    workspace = os.environ.get("WORKSPACE")
+    ml_client = MLClient(credential, subscription_id, resource_group, workspace)
 
 online_endpoint_name = os.environ.get("ONLINE_ENDPOINT_NAME")
 deployment_name = os.environ.get("DEPLOYMENT_NAME")
