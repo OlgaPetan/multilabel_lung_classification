@@ -21,3 +21,4 @@ Pillow==10.1.0
 Requests==2.31.0
 streamlit==1.12.0
 altair==4.0
+marshmallow==3.23.2
