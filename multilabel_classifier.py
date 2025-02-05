@@ -56,6 +56,7 @@ st.markdown(
             unsafe_allow_html=True
         )
 st.markdown("<div class='intro_para'>This app takes an X-ray image of the lungs as input and returns a prediction of a patient's condition. If the patient is healthy, the app does not output any pathology. If the patient is not healthy, the app outputs three useful predictions: 1. how many diseases are detected; 2. which diseases are detected; 3. a visual representation of where the diseases are detected. The model is trained on Azure using AutoML, and is deployed on Azure. To test the app with X-Ray thoracic images, go to this repo: https://github.com/OlgaPetan/multilabel_lung_classification. </div>", unsafe_allow_html=True)
+st.markdown("<div class='inference_endpoint'>The inference endpoint has limited capacity, so inference might take a couple of seconds. </div>", unsafe_allow_html=True
 st.markdown("<div style=margin-bottom: 3px;'></div>", unsafe_allow_html=True)
 def save_uploaded_image(uploaded_image, target_path):
     with open(target_path, "wb") as f:
